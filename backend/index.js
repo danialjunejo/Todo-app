@@ -1,12 +1,11 @@
 import express from "express";
-
-import { createTodo, updateTodo } from "./types";
+import { createTodo, updateTodo } from "./types.js";
+import { Todo } from "./db.js";
 
 const app = express();
-
 app.use(express.json());
 
-app.post("/todo", (req, res) => {
+app.post("/todo", async (req, res) => {
   const createPayload = req.body;
   const parsedPayload = createTodo.parse(createPayload);
   if (!parsedPayload.success) {
@@ -15,11 +14,22 @@ app.post("/todo", (req, res) => {
     });
     return;
   }
+  const newTodo = new Todo({ createPayload });
+  await newTodo.save();
+  res.status(200).json({
+    message: "Todo Added Successfully",
+  });
 });
 
 app.get("/todos", (req, res) => {
-  const todos = req.headers.id;
-  updateTodo.parse(todos);
+  const updatePayload = req.body;
+  const parsedPayload = updateTodo.parse(updatePayload);
+  if (!parsedPayload.success) {
+    res.status(411).json({
+      message: "Invalid Inputs",
+    });
+    return;
+  }
 });
 
 app.put("/completed", (req, res) => {});

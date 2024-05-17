@@ -20,8 +20,6 @@ yarn-error.log*
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-# Optional TernJS IDE support directory
-.tern-port
 
 # Optional coverage directory for testing frameworks
 coverage/
@@ -37,10 +35,7 @@ bower_components/
 
 # Lock files
 package-lock.json
-yarn.lock
 
-# TypeScript cache
-*.tsbuildinfo
 
 # Optional dotenv environment variables file
 .env
@@ -63,5 +58,3 @@ docs/
 # Optional project local editor settings
 .vscode/
 .idea/
-*.sublime-project
-*.sublime-workspace
