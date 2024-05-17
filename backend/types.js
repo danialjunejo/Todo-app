@@ -1,13 +1,12 @@
-import zod from "zod";
+import { object, string } from "zod";
 
-const createTodo = {
-  title: zod.string(),
-  description: zod.string(),
-};
+const createTodo = object({
+  title: string(),
+  description: string(),
+});
 
-const updateTodo = {
-  id: zod.string(),
-};
+const updateTodo = object({
+  id: string(),
+});
 
-
-export {createTodo, updateTodo};
+export { createTodo, updateTodo };

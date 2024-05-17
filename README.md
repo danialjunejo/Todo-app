@@ -1,7 +1,9 @@
-## TODO APP
-This project constains a simple TODO app
-It has following features-
+# TODO APP
 
--anyone can create a todo
--anyone can see their existing todos
--anyone can mark down a todo as done
+This project contains a simple TODO app.
+
+## Features
+
+- Anyone can create a todo.
+- Anyone can see their existing todos.
+- Anyone can mark a todo as done.
